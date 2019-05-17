@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  successes: 1
+  lastsuccess: 2019-05-17
+  user: one
+  card: one
+
+two:
+  successes: 1
+  lastsuccess: 2019-05-17
+  user: two
+  card: two

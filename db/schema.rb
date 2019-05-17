@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190517025737) do
+ActiveRecord::Schema.define(version: 20190517053208) do
+
+  create_table "cards", force: :cascade do |t|
+    t.integer "level_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["level_id"], name: "index_cards_on_level_id"
+  end
+
+  create_table "cardstates", force: :cascade do |t|
+    t.integer "successes"
+    t.date "lastsuccess"
+    t.integer "user_id"
+    t.integer "card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_cardstates_on_card_id"
+    t.index ["user_id"], name: "index_cardstates_on_user_id"
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.text "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
