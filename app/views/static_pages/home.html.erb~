@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-
+<%= provide(:title, "Home") %>
 <h1>StaticPages#home</h1>
 <p>Find me in app/views/static_pages/home.html.erb</p>
-<p>this is some text and word: </p>
-<%= provide(:title, "Home") %>
-<%= yield(:title) %>
-<br>
-this this this this
-<br>
-<%= "hello" %>
 
-</html>
