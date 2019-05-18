@@ -1,11 +1,11 @@
 # Delete existing data
+Level.destroy_all
+Cardstate.destroy_all
 User.destroy_all
 Card.destroy_all
-Cardstate.destroy_all
-Level.destroy_all
 
 # Create new user
-a = User.create
+a = User.create(name: "Arthur")
 userid = a.id
 
 # Create cards
@@ -13,7 +13,7 @@ cardnum = 1
 
 while cardnum < 21
 	if cardnum < 11
-		successesnum = -1
+		successesnum = -2
 		lastsuccessnum = ""
 	else
 		successesnum = rand(4)
