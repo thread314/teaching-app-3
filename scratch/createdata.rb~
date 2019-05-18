@@ -1,0 +1,24 @@
+# Delete existing data
+User.destroy_all
+Card.destroy_all
+Cardstate.destroy_all
+Level.destroy_all
+
+# Create new user
+a = User.create
+userid = a.id
+
+# Create cards
+cardnum = 1
+
+while cardnum < 21
+	if cardnum < 11
+		successes = -1
+		successdate = ""
+	else
+		successes = rand(4)
+		successdate = Date.today + rand(7)
+	end
+	newcard = Card.create
+	newcard.levels.build(question: "What is 1 x #{cardnum}? {#{cardnum}}", )
+end
