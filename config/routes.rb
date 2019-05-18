@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'cards/new'
+
+  get 'cards/show'
+
+  get 'cards/edit'
+
   get 'users/new'
 
   get 'static_pages/home'
