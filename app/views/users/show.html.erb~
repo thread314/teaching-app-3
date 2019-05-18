@@ -2,3 +2,4 @@
 <p>
 <%= @user.name %> - <%= @user.id %>
 </p>
+<p>You have <%= @user.cardstates.where("successes > ?", -2) %> cards to study today</p>

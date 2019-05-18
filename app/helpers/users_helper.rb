@@ -11,4 +11,16 @@ module UsersHelper
 		end
 	end
 
+	def getnextcard(user)
+		nextcard = user.cardstates.where(successes: -1).first
+		if nextcard.exists?
+			return nextcard
+		end
+		nextcard = user.cardstates.where("successes > ?", -1).order(:updated_at, :id ).limit(1)
+		puts nextcard.class
+		if nextcard.exists?
+			return nextcard
+		end
+	end
+
 end
