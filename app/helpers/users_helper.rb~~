@@ -22,9 +22,9 @@ module UsersHelper
 			return nextcard
 		end
 	end
-	
+
 	def separatequestion(question)
- 		return question.split(/(?=\{)|(?<=\})/)
- 	end
+		return question.split(/(?=\{)|(?<=\})/)
+	end
 
 end
