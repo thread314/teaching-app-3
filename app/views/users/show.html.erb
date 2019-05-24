@@ -3,3 +3,4 @@
 <%= @user.name %> - <%= @user.id %>
 </p>
 <p>You have <%= @user.cardstates.where("successes > ?", -2).count %> cards to study today</p>
+<p><%#= link_to 'Study Now', study_path(@user) %> </p> 
