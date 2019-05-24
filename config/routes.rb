@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
 	get 'users/index'
 	resources :users
+	resources :cardstates
 	get 'users/:id/study' => 'cardstates#edit'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'

@@ -3,3 +3,12 @@
 <% @questionarray.each do |element| %>
 	<p> <%= element %> </p>
 <% end %>
+<p> <%= @nextcard %> </p>
+<p> <%= @user %> </p>
+<p>
+  <%= form_for(@nextcard) do |f| %>
+    <%= f.label :successes %>
+   	<%= f.text_field :successes %>
+    <%= f.submit "Submit Answer", class: "btn btn-primary" %>
+  <% end %>
+</p>
