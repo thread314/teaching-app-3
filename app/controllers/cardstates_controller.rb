@@ -1,18 +1,16 @@
 class CardstatesController < ApplicationController
 
   def edit
-		#Temporary hard coding this to the last user, fix this
-		#@user = User.find(params[:id])
-		@user = User.last
+		@user = User.find(params[:id])
 		@nextcard = helpers.getnextcard(@user)
 		@questionarray = helpers.separatequestion(@nextcard.card.levels.first.question)
   end
 
 	def update
-		# @user = User.find(params[:id])
 		@nextcard = Cardstate.find(params[:id]) 
+		@user = @nextcard.user
 		if @nextcard.update_attributes(cardstate_params)
-			redirect_to User.last
+			redirect_to @user
 		end
 	end
 
