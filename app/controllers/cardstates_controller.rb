@@ -11,7 +11,7 @@ class CardstatesController < ApplicationController
 		@nextcard = Cardstate.find(params[:id]) 
 		@user = @nextcard.user
 		if @nextcard.update_attributes(cardstate_params)
-			redirect_to @user
+			redirect_to study_path(@user)
 		end
 	end
 

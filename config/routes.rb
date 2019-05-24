@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 	get 'users/index'
 	resources :users
 	resources :cardstates
-	get '/users/:id/study', to: 'cardstates#edit'#, as: 'study'
+	get '/users/:id/study', to: 'users#study', as: 'study'
 	
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'

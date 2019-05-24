@@ -1,0 +1,14 @@
+<h1>Next question</h1>
+<p><%= @user.name %></p>
+<% @questionarray.each do |element| %>
+	<p> <%= element %> </p>
+<% end %>
+<p> <%= @nextcard.id %> </p>
+<p>
+  <%= form_for(@nextcard) do |f| %>
+    <%= f.label :successes %>
+   	<%= f.text_field :successes %>
+    <%= f.submit "Submit Answer", class: "btn btn-primary" %>
+  <% end %>
+</p>
+<%= console %>
