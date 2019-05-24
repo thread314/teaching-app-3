@@ -16,7 +16,7 @@ module UsersHelper
 		if !nextcard.nil?
 			return nextcard
 		end
-		nextcard = user.cardstates.where("successes > ?", -1).order(:updated_at, :id ).limit(1)
+		nextcard = user.cardstates.where("successes > ?", -1).order(:updated_at, :id ).first
 		puts nextcard.class
 		if !nextcard.nil?
 			return nextcard

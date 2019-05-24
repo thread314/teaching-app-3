@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'cardstates/edit'
+
   get 'cards/new'
   get 'cards/show'
   get 'cards/edit'
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
 
 	get 'users/index'
 	resources :users
-	get 'users/:id/study' => 'users#study'
+	get 'users/:id/study' => 'cardstates#edit'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
 end

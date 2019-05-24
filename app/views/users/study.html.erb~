@@ -1,5 +1,0 @@
-<h1>Next question</h1>
-<p><%= @user.name %></p>
-<% @questionarray.each do |element| %>
-	<p> <%= element %> </p>
-<% end %>
