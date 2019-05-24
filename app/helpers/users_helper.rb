@@ -27,4 +27,14 @@ module UsersHelper
  		return question.split(/(?=\{)|(?<=\})/)
  	end
 
+	def classifyelement(element)
+		if element[0] == "{" && element[-1] == "}"
+			return "answer-text"
+		else
+			return "plaintext"
+		end
+	end
+
+
+
 end

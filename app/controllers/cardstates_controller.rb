@@ -18,7 +18,7 @@ class CardstatesController < ApplicationController
 	private
 
 	def cardstate_params
-		params.require(:cardstate).permit(:successes)
+		params.require(:id).permit(:answer)
 	end
 
 end

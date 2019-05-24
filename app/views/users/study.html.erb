@@ -1,14 +1,17 @@
 <h1>Next question</h1>
 <p><%= @user.name %></p>
 <% @questionarray.each do |element| %>
-	<p> <%= element %> </p>
+	<p> 
+	<% if classifyelement(element) == "answer-text" %>
+		<%= form_tag("/cardstates/#{@nextcard.id}", method: "PATCH") do %>
+   	<%= text_field_tag(:answer) %>
+    <%= submit_tag("Submit Answer") %>
+  <% end %>
+
+	<% elsif classifyelement(element) == "plaintext" %> 
+		<%= element %>
+	<% end %>
+	</p>
 <% end %>
 <p> <%= @nextcard.id %> </p>
-<p>
-  <%= form_for(@nextcard) do |f| %>
-    <%= f.label :successes %>
-   	<%= f.text_field :successes %>
-    <%= f.submit "Submit Answer", class: "btn btn-primary" %>
-  <% end %>
-</p>
 <%= console %>
