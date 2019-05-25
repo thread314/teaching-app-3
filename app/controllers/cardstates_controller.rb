@@ -9,7 +9,7 @@ class CardstatesController < ApplicationController
 	def update
 		@nextcard = Cardstate.find(params[:id]) 
 		@user = @nextcard.user
-		if @nextcard.update(cardstate_params)
+		if @nextcard.update(successes: cardstate_params[:first])
 			redirect_to study_path(@user)
 		end
 	end
