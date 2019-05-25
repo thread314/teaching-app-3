@@ -1,7 +1,6 @@
 class CardstatesController < ApplicationController
 
   def edit
-		#Comment
 		@user = User.find(params[:id])
 		@nextcard = helpers.getnextcard(@user)
 		@questionarray = helpers.separatequestion(@nextcard.card.levels.first.question)
@@ -10,7 +9,7 @@ class CardstatesController < ApplicationController
 	def update
 		@nextcard = Cardstate.find(params[:id]) 
 		@user = @nextcard.user
-		if @nextcard.update_attributes(cardstate_params)
+		if @nextcard.update(cardstate_params)
 			redirect_to study_path(@user)
 		end
 	end
@@ -18,7 +17,7 @@ class CardstatesController < ApplicationController
 	private
 
 	def cardstate_params
-		params.require(:id).permit(:answer)
+		params.require(:answer).permit(:first)
 	end
 
 end

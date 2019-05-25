@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'cardstates/edit'
-	resources :cardstates
+  put 'cardstates/:id/update', to: 'cardstates#update'
 
   get 'cards/new'
   get 'cards/show'
