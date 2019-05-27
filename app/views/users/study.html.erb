@@ -1,6 +1,6 @@
 <h1>Next question</h1>
 <p><%= @user.name %></p>
-<% @questionarray.each do |element| %>
+<% @questionarray["complete"].each do |element| %>
 	<p> 
 	<% if classifyelement(element) == "answer-text" %>
 

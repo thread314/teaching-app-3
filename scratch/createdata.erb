@@ -17,10 +17,11 @@ while cardnum < 21
 		lastsuccessnum = ""
 	else
 		successesnum = rand(4)
-		lastsuccessnum = Date.today + rand(7)
+		lastsuccessnum = Date.today - rand(9)
 	end
 	newcard = Card.create
 	newcard.levels.create(question: "What is 1 x #{cardnum}? {#{cardnum}}")
 	newcard.cardstates.create(successes: successesnum, lastsuccess: lastsuccessnum, user_id: userid)
 	cardnum += 1
+  sleep(1)
 end

@@ -16,7 +16,7 @@ module UsersHelper
 		if !nextcard.nil?
 			return nextcard
 		end
-		nextcard = user.cardstates.where("successes > ?", -1).order(:updated_at, :id ).first
+    nextcard = user.cardstates.where("successes > ? AND lastsuccess + successes >= ?", -1, Date.today).order(:updated_at, :id ).first
 		puts nextcard.class
 		if !nextcard.nil?
 			return nextcard
@@ -24,7 +24,11 @@ module UsersHelper
 	end
 	
 	def separatequestion(question)
- 		return question.split(/(?=\{)|(?<=\})/)
+    output = {}
+    output["complete"] = question.split(/(?=\{)|(?<=\})/)
+    answer = output["complete"].reject { |i| i[0] != "{" }
+    output["answer"] = answer[0][1..-2]
+    return output
  	end
 
 	def classifyelement(element)
