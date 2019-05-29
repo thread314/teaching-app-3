@@ -12,14 +12,12 @@ module UsersHelper
 	end
 
 	def getnextcard(user)
-		nextcard = user.cardstates.where(successes: -1).first
-		if !nextcard.nil?
+    if nextcard = user.cardstates.where(successes: -1).first
 			return nextcard
-		end
-    nextcard = user.cardstates.where("successes > ? AND lastsuccess + successes >= ?", -1, Date.today).order(:updated_at, :id ).first
-		puts nextcard.class
-		if !nextcard.nil?
-			return nextcard
+    elsif allcards = user.cardstates.where("successes > ?", -1).order(:updated_at, :id)
+      allcards.find{|i| i.lastsuccess.nil? || (i.lastsuccess + i.successes) < Date.today}
+    else
+      return nil
 		end
 	end
 	

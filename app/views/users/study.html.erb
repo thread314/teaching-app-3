@@ -1,18 +1,20 @@
 <h1>Next question</h1>
 <p><%= @user.name %></p>
-<% @questionarray["complete"].each do |element| %>
-	<p> 
-	<% if classifyelement(element) == "answer-text" %>
+<% if @questionarray %>
+  <% @questionarray["complete"].each do |element| %>
+    <p> 
+    <% if classifyelement(element) == "answer-text" %>
 
-	<%= form_tag("/cardstates/#{@nextcard.id}/update", method: "put") do %>
-   	<%= text_field_tag("answer[first]") %>
-    <%= submit_tag("Submit Answer") %>
+    <%= form_tag("/cardstates/#{@nextcard.id}/update", method: "put") do %>
+      <%= text_field_tag("answer[first]") %>
+      <%= submit_tag("Submit Answer") %>
+    <% end %>
+
+    <% elsif classifyelement(element) == "plaintext" %> 
+      <%= element %>
+    <% end %>
+    </p>
   <% end %>
-
-	<% elsif classifyelement(element) == "plaintext" %> 
-		<%= element %>
-	<% end %>
-	</p>
+  <p> <%= @nextcard.id %> </p>
 <% end %>
-<p> <%= @nextcard.id %> </p>
 <%= console %>
