@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  put 'cardstates/:id/update', to: 'cardstates#update'
-
-  resources :cards, only: [:show, :edit, :new, :index]
+  resources :cards, only: [:show, :new, :index]
+  resources :levels, only: [:edit, :update]
 
 	resources :users
 	get '/users/:id/study', to: 'users#study', as: 'study'
+  put 'cardstates/:id/update', to: 'cardstates#update'
 
   get 'static_pages/home'
 
