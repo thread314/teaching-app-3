@@ -1,13 +1,13 @@
 module UsersHelper
 
 	def addnewcards(user)
-    if user.laststudied != Date.today && user.cardstates.count > 0
+    if user.laststudied != Date.today && user.cardstates.where(successes: -2).count > 0
 			cardsneeded = 15 - user.cardstates.where(successes:-1).count	
 			cardsneeded.times do 
 				user.cardstates.where(successes: -2).first.update(successes: -1)
 			end
-			user.update(laststudied: Date.today)
 		end
+    user.update(laststudied: Date.today)
 	end
 
 	def getnextcard(user)
