@@ -2,12 +2,8 @@ Rails.application.routes.draw do
 
   put 'cardstates/:id/update', to: 'cardstates#update'
 
-  get 'cards/new'
-  get 'cards/show'
-  get 'cards/edit'
+  resources :cards, only: [:show, :edit, :new, :index]
 
-  #get 'users/new'
-	#get 'users/index'
 	resources :users
 	get '/users/:id/study', to: 'users#study', as: 'study'
 

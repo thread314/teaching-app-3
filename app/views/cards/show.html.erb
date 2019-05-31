@@ -1,2 +1,5 @@
-<h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
+<h1>View card</h1>
+<% @card.levels.each do |i| %>
+  <p><%= i.question %></p>
+<% end %>
+<!-- this line needs to be fixed and added to the each loop above -->

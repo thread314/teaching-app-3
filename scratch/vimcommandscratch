@@ -1,0 +1,62 @@
+
+wt
+e
+b
+W
+E
+
+B
+f
+F
+aaa(word here)jfjfj
+ctrl i - 
+#and ctrl o forward and backwards in history
+view this thing thimble thimble thimble
+thimblet
+this
+thing
+thimble
+T
+doing a capital C deletes the rest of the line and goes into insert mode
+= format indentation selected code
+repeat         last find - ;
+this is a sentence. This is not a sentence. Don't look here. 
+Go back to previous - ,
+view inside "<({['" vi
+search for the word your cursor is on *
+
+ctrl - o ctrl - o - open last opened document. 
+Write contents of shell commend to file :r !ls
+access command history q:enter
+
+view around va
+view inside word, view inside W
+yank inside and yank around
+delete inside
+change inside
+and both for around too
+delete until character - df-character
+and change for this too
+search upwards - ?
+first non whitespace character ^
+indent current line >>
+outdent current line <<
+control d
+control u
+f and b as well
+set up a shortcut - for reload vim which is :source $MYVIMRC<CR>
+inoremap remap key in normal mode
+cnoremap - command mode
+vnoremap - visual mode
+:tabnew - open in new tab
+and make a shortcut to open my .vimrc
+delete to 14th line d14G
+change 14 go
+go to line x
+delete 4 lines above
+go 6 lines up down and change for this too
+:buffers - display all files open in buffer
+view inside t - html tag and around them
+maybe look up a list of all operators, motions and objects
+reformat =  is a command
+repeat command to perform it on the current line - yy >> << dd cc 
