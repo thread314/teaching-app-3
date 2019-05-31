@@ -5,10 +5,10 @@
     <p> 
     <% if classifyelement(element) == "answer-text" %>
 
-    <%= form_tag("/cardstates/#{@nextcard.id}/update", method: "put") do %>
-      <%= text_field_tag("answer[first]") %>
-      <%= submit_tag("Submit Answer") %>
-    <% end %>
+      <%= form_tag("/cardstates/#{@nextcard.id}/update", method: "put") do %>
+        <%= text_field_tag("answer[first]") %>
+        <%= submit_tag("Submit Answer") %>
+      <% end %>
 
     <% elsif classifyelement(element) == "plaintext" %> 
       <%= element %>

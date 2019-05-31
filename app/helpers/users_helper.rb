@@ -1,9 +1,8 @@
 module UsersHelper
 
-	#Add new cards to the users deck, if they have not already studied today
 	def addnewcards(user)
 		if user.laststudied != Date.today
-			cardsneeded = 8 - user.cardstates.where(successes:-1).count	
+			cardsneeded = 15 - user.cardstates.where(successes:-1).count	
 			cardsneeded.times do 
 				user.cardstates.where(successes: -2).first.update(successes: -1)
 			end
@@ -15,7 +14,7 @@ module UsersHelper
     if nextcard = user.cardstates.where(successes: -1).first
 			return nextcard
     elsif allcards = user.cardstates.where("successes > ?", -1).order(:updated_at, :id)
-      allcards.find{|i| i.lastsuccess.nil? || (i.lastsuccess + i.successes) < Date.today}
+      allcards.find{|i| i.lastsuccess.nil? || (i.lastsuccess + i.successes) <= Date.today}
     else
       return nil
 		end
@@ -36,7 +35,5 @@ module UsersHelper
 			return "plaintext"
 		end
 	end
-
-
 
 end

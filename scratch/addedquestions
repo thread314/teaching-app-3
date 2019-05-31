@@ -1,0 +1,20 @@
+Select all text inside () {vi(}
+This is also a line of text
+Select all text inside () {vi(}
+This is also a line of text
+VIM - Next tab { k}
+VIM - Previous tab { j}
+VIM - First tab { h}
+VIM - Last tab { l}
+VIM - Open empty tab { n}
+VIM - Open file in a new tab { e}
+VIM - Move current tab left { <}
+VIM - Move current tab right { >}
+VIM - Save and close current tab { q}
+VIM - Save current tab { s}
+VIM - Open file through FZF { f}
+VIM - Copy to system clipboard { c}
+VIM - Paste from system clipboard { v}
+VIM - Toggle search highlighting { m}
+VIM - Turn comment on selected line { #}
+VIM - Turn comment off selected line { 3}
