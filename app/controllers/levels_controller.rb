@@ -1,5 +1,19 @@
 class LevelsController < ApplicationController
   
+  def new
+    @newlevel = Level.new
+  end
+
+  def create
+    @user = User.last
+    newcard = Card.create
+    @newlevel = Level.new(level_params)
+    @newlevel.update_attributes(card_id: newcard.id)
+    @newlevel.save
+    @user.cardstates.create(card_id: newcard.id)
+    redirect_to @user
+  end
+
   def edit
     @level = Level.find(params[:id]) 
   end
