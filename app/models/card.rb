@@ -1,4 +1,4 @@
 class Card < ApplicationRecord
-	has_many :cardstates
-	has_many :levels
+	has_many :cardstates, dependent: :destroy
+	has_many :levels, dependent: :destroy
 end

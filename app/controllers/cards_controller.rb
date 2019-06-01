@@ -13,4 +13,9 @@ class CardsController < ApplicationController
   def index
   end
 
+	def destroy
+    @card = Card.find(params[:id])
+		@card.destroy	
+		redirect_to users_path
+	end
 end

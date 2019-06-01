@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :cards, only: [:show, :new, :index]
+  resources :cards, only: [:show, :new, :index, :destroy]
   resources :levels, only: [:edit, :update, :create]
   get '/users/:id/newcard', to: 'levels#new', as: 'newcard'
 

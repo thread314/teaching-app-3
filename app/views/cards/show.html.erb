@@ -3,4 +3,5 @@
 <% @card.levels.each do |i| %>
   <p><%= i.question %> - <%= link_to 'Edit', edit_level_path(i.id) %> </p> 
 <% end %>
+<%= link_to "Delete card", @card, method: :delete %>
 <%= console %>
