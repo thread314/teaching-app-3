@@ -7,3 +7,4 @@
 <p>You have <%= @user.cardstates.where(successes: -2).count %> cards in your queue</p>
 <p><%= link_to 'Study Now', study_path(@user) %> </p> 
 <p><%= link_to 'View All My Cards', cardlist_path(@user) %> </p> 
+<p><%= link_to 'Edit Profile', edit_user_path(@user) %> </p> 
