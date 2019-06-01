@@ -3,7 +3,8 @@
   <head>
     <title>TeachingApp3</title>
     <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+			<% flashcolor = (flash[:message] == "Correct" ? "green" : "red") %>
+        <%= content_tag(:div, message, style: "background-color:#{flashcolor}") %>
       <% end %>
     <%= csrf_meta_tags %>
 
