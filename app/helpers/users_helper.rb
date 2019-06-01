@@ -20,6 +20,11 @@ module UsersHelper
 		end
 	end
 	
+	def getallduecards(user)
+		allcards = user.cardstates.where("successes>= ?", -1)
+		allcards.select { |i| i.lastsuccess.nil? || (i.lastsuccess + i.successes) <= Date.today }
+	end
+
 	def separatequestion(question)
     output = {}
     output["complete"] = question.split(/(?=\{)|(?<=\})/)

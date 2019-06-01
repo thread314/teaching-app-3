@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 		helpers.addnewcards(@user)
+		@numberofduecards = helpers.getallduecards(@user).count
   end
 
   def study

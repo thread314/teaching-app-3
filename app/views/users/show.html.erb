@@ -2,6 +2,8 @@
 <p>
 <%= @user.name %> - <%= @user.id %>
 </p>
-<p>You have <%= @user.cardstates.where("successes > ?", -2).count %> cards to study today</p>
+<p>You have <%= @numberofduecards %> cards to study today</p>
+<p>You have <%= @user.cardstates.count %> cards in total</p>
+<p>You have <%= @user.cardstates.where(successes: -2).count %> cards in your queue</p>
 <p><%= link_to 'Study Now', study_path(@user) %> </p> 
-<p><%= link_to 'View All Cards', cardlist_path(@user) %> </p> 
+<p><%= link_to 'View All My Cards', cardlist_path(@user) %> </p> 
