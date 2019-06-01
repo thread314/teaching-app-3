@@ -1,7 +1,9 @@
 <h1>All Cards</h1>
 <% Card.all.each do |i| %>
   <p>
-  <%= "#{i.id} - #{i.levels.first.question}" %>
+	<% if i.levels.exists? %>
+		<%= "#{i.id} - #{i.levels.first.question}" %>
+	<% end %>
   <%= link_to 'View', card_path(i.id) %> 
   </p>
 <% end %>
