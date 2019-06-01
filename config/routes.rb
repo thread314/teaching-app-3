@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
   resources :cards, only: [:show, :new, :index]
   resources :levels, only: [:edit, :update, :create]
-  get '/users/:id/newcard', to: 'levels#new'
+  get '/users/:id/newcard', to: 'levels#new', as: 'newcard'
 
 	resources :users
 	get '/users/:id/study', to: 'users#study', as: 'study'
-  get '/users/:id/cardlist', to: 'users#cardlist'
+  get '/users/:id/cardlist', to: 'users#cardlist', as: 'cardlist'
   put 'cardstates/:id/update', to: 'cardstates#update'
 
   get 'static_pages/home'

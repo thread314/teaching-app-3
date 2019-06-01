@@ -1,7 +1,5 @@
 Select all text inside () {vi(}
-This is also a line of text
 Select all text inside () {vi(}
-This is also a line of text
 VIM - Next tab { k}
 VIM - Previous tab { j}
 VIM - First tab { h}
@@ -18,3 +16,32 @@
 VIM - Toggle search highlighting { m}
 VIM - Turn comment on selected line { #}
 VIM - Turn comment off selected line { 3}
+i3 - Shift focus to Terminal {Ct}
+i3 - Shift focus to Qutebrowser {Cq}
+VIM - Shift from insert mode to normal mode for one action {Co}
+VIM - Open another copy of current file in vertical split {:vs}
+Terminal - cd to $HOME {gh}
+Terminal - Perform sum 2+2 {math "2+2"}
+Terminal - cd to Storage Drive {gs}
+Terminal - cd to Torrents folder {gt}
+Terminal - Make directory, parents if necessary, verbose output {md}
+Ranger - cd to MaM {`a}
+Ranger - cd to btn {`b}
+Ranger - cd to ptp {`p}
+Ranger - cd to downloads folder {`d}
+Ranger - cd to media folder {`m}
+Ranger - cd to Storage Drive {`s}
+Ranger - cd to Torrents Folder {`t}
+Ranger - cd to Youtube folder {`y}
+Terminal - Delete previous word {Cw}
+Terminal - Open ranger {r}
+VimWiki - Open default wiki index file { ww}
+VimWiki - Delete wiki file you are in { wd}
+VimWiki - Rename the wiki file you are in { wr}
+VimWiki - Open default wiki index in new tab { wt}
+Vim-Easymotion - Open hints {\\w}
+VIM - Delete the rest of the word and enter insert mode - {C}
+VIM - Reformat indentation {=}
+VIM - Repeat the last (f)ind or (t)ill {;}
+VIM - Access command history {q:}
+VIM - Go to previous (f)ind or (t)ill {,}

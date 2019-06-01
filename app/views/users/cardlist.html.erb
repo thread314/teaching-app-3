@@ -1,6 +1,8 @@
 <h1>Full list of cards</h1>
-
-<%= @user.name %>
+<p><%= link_to 'New Card', newcard_path %></p>
+<%= link_to "Back to user", user_path %>
 <% @user.cardstates.each do |i| %>
-  <p><%= i.id %></p>
+  <% @card = i.card%>
+  <p><%= "#{i.id} - #{i.card.levels.first.question}" %>
+  <%= link_to 'View', card_path(@card) %></p>
 <% end %>

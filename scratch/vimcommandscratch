@@ -1,5 +1,3 @@
-
-wt
 e
 b
 W
@@ -8,20 +6,8 @@ E
 B
 f
 F
-aaa(word here)jfjfj
 ctrl i - 
 #and ctrl o forward and backwards in history
-view this thing thimble thimble thimble
-thimblet
-this
-thing
-thimble
-T
-doing a capital C deletes the rest of the line and goes into insert mode
-= format indentation selected code
-repeat         last find - ;
-this is a sentence. This is not a sentence. Don't look here. 
-Go back to previous - ,
 view inside "<({['" vi
 search for the word your cursor is on *
 

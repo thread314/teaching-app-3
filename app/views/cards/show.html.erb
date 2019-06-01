@@ -1,4 +1,6 @@
 <h1>View card</h1>
+<%= "Card id - #{@card.id}" %>
 <% @card.levels.each do |i| %>
   <p><%= i.question %> - <%= link_to 'Edit', edit_level_path(i.id) %> </p> 
 <% end %>
+<%= console %>
